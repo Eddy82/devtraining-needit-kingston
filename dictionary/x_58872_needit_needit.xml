@@ -2,6 +2,7 @@
 <database>
     <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="6" type="collection">
         <element label="Motivo di Business" max_length="40" name="motivo_di_business" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Altro" max_length="255" name="u_other" type="string"/>
         <element label="Richiesto Per" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" choice="1" default="legal" label="Tipo Richiesta" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
@@ -21,6 +22,7 @@
                 <element label="Legal 2" sequence="5" value="legal2"/>
                 <element label="Your Department Choice 1" sequence="6" value="your_dep_choice1"/>
                 <element label="Your Department Choice 2" sequence="7" value="your_dep_choice2"/>
+                <element label="Other" sequence="8" value="other"/>
             </choice>
         </element>
         <element label="Quando si  necessita" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
