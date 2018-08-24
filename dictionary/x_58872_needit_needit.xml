@@ -4,7 +4,7 @@
         <element label="Motivo di Business" max_length="40" name="motivo_di_business" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Altro" max_length="255" name="u_other" type="string"/>
         <element label="Richiesto Per" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
-        <element attributes="edge_encryption_enabled=true" choice="1" default="legal" label="Tipo Richiesta" mandatory="true" max_length="40" name="u_request_type" type="string">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Tipo Richiesta" mandatory="true" max_length="40" name="u_request_type" type="string">
             <choice>
                 <element label="Human Resources" sequence="0" value="hr"/>
                 <element label="Facilities" sequence="1" value="facilities"/>
@@ -12,7 +12,7 @@
                 <element label="Your Department Choice" sequence="3" value="your_dep_choice"/>
             </choice>
         </element>
-        <element attributes="edge_encryption_enabled=true" choice="1" default="legal1" label="Di cosa hai bisogno" mandatory="true" max_length="40" name="u_what_needed" type="string">
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Di cosa hai bisogno" mandatory="true" max_length="40" name="u_what_needed" type="string">
             <choice>
                 <element label="Human Resources 1" sequence="0" value="hr1"/>
                 <element label="Human Resources 2" sequence="1" value="hr2"/>

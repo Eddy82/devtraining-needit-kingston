@@ -11,10 +11,6 @@
         <name>Set What Needed Field</name>
         <order/>
         <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
-	if (newValue === '') {
-		return;
-	}
-	
 	//Questa variabile viene usata come cache, per recuperare il valore già presente sul campo
 	var whatNeed=g_form.getValue('u_what_needed');
 	
@@ -23,29 +19,37 @@
 	
 	//Per ogni valore del campo "Tipo Richiesta" vengono definiti i possibili valori del campo "Di cosa hai bisogno"
 	if (newValue=='hr'){
+		g_form.addOption('u_what_needed','','-- None --');
 		g_form.addOption('u_what_needed','hr1','Human Resources 1');
 		g_form.addOption('u_what_needed','hr2','Human Resources 2');
 		g_form.addOption('u_what_needed','other','Other');
 	}
 	if (newValue=='facilities'){
-		g_form.addOption('u_what_needed','facilities 1','facilities 1');
-		g_form.addOption('u_what_needed','facilities 2','facilities 2');
+		g_form.addOption('u_what_needed','','-- None --');
+		g_form.addOption('u_what_needed','facilities1','Facilities 1');
+		g_form.addOption('u_what_needed','facilities2','Facilities 2');
 		g_form.addOption('u_what_needed','other','Other');
 	}
 	if (newValue=='legal'){
-		g_form.addOption('u_what_needed','legal 1','Legal 1');
-		g_form.addOption('u_what_needed','legal 2','Legal 2');
+		g_form.addOption('u_what_needed','','-- None --');
+		g_form.addOption('u_what_needed','legal1','Legal 1');
+		g_form.addOption('u_what_needed','legal2','Legal 2');
 		g_form.addOption('u_what_needed','other','Other');
 	}
 	if (newValue=='your_dep_choice'){
-		g_form.addOption('u_what_needed','your_dep_choice 1','Your Department Choice 1');
-		g_form.addOption('u_what_needed','your_dep_choice 2','Your Department Choice 2');
+		g_form.addOption('u_what_needed','','-- None --');
+		g_form.addOption('u_what_needed','your_dep_choice1','Your Department Choice 1');
+		g_form.addOption('u_what_needed','your_dep_choice2','Your Department Choice 2');
 		g_form.addOption('u_what_needed','other','Other');
+	}
+	if (newValue===''){
+		g_form.addOption('u_what_needed','','-- None --');
 	}
 	
 	//Se il ticket non è in fase di creazione deve essere caricato il valore corrente del campo "Di cosa hai bisogno"
 	if(isLoading &&!g_form.isNewRecord()) {
 		g_form.setValue('u_what_needed',whatNeed);
+		alert("campo rivalorizzato");
 	}
 }]]></script>
         <sys_class_name>sys_script_client</sys_class_name>
@@ -54,7 +58,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>c207475a4f0023000a0222788310c782</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>18</sys_mod_count>
         <sys_name>Set What Needed Field</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
@@ -62,7 +66,7 @@
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_script_client_c207475a4f0023000a0222788310c782</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-08-23 09:17:37</sys_updated_on>
+        <sys_updated_on>2018-08-24 15:12:08</sys_updated_on>
         <table>x_58872_needit_needit</table>
         <type>onChange</type>
         <ui_type>10</ui_type>
