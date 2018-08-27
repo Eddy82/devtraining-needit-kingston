@@ -4,8 +4,8 @@
         <abort_action>false</abort_action>
         <access>package_private</access>
         <action_delete>false</action_delete>
-        <action_insert>true</action_insert>
-        <action_query>false</action_query>
+        <action_insert>false</action_insert>
+        <action_query>true</action_query>
         <action_update>true</action_update>
         <active>true</active>
         <add_message>false</add_message>
@@ -16,12 +16,12 @@
         <condition/>
         <description/>
         <execute_function>false</execute_function>
-        <filter_condition table="x_58872_needit_needit">u_what_needed!=other^EQ<item endquery="false" field="u_what_needed" goto="false" newquery="false" operator="!=" or="false" value="other"/>
+        <filter_condition table="x_58872_needit_needit">u_requested_forISNOTEMPTY^EQ<item endquery="false" field="u_requested_for" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter_condition>
         <is_rest>false</is_rest>
-        <message><![CDATA[<p>Ciao dalla BR</p>]]></message>
-        <name>Set Altro Null</name>
+        <message/>
+        <name>Test</name>
         <order>100</order>
         <priority>100</priority>
         <rest_method/>
@@ -33,25 +33,25 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
 	// Add your code here
-
+	gs.addInfoMessage("La mail dell\'utente è :"+current.u_requested_for.email);
 })(current, previous);]]></script>
         <sys_class_name>sys_script</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-08-27 08:11:35</sys_created_on>
+        <sys_created_on>2018-08-27 13:59:49</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>acce57a34f0023000a0222788310c7af</sys_id>
+        <sys_id>6e13b87f4f8023000a0222788310c7de</sys_id>
         <sys_mod_count>8</sys_mod_count>
-        <sys_name>Set Altro Null</sys_name>
+        <sys_name>Test</sys_name>
         <sys_overrides/>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
-        <sys_update_name>sys_script_acce57a34f0023000a0222788310c7af</sys_update_name>
+        <sys_update_name>sys_script_6e13b87f4f8023000a0222788310c7de</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-08-27 11:54:32</sys_updated_on>
-        <template>u_other=^EQ</template>
-        <when>before</when>
+        <sys_updated_on>2018-08-27 14:55:43</sys_updated_on>
+        <template/>
+        <when>before_display</when>
     </sys_script>
-    <sys_translated_text action="delete_multiple" query="documentkey=acce57a34f0023000a0222788310c7af"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=6e13b87f4f8023000a0222788310c7de"/>
 </record_update>
