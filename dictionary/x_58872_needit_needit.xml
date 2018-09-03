@@ -2,6 +2,7 @@
 <database>
     <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" sizeclass="11" type="collection">
         <element label="Motivo di Business" max_length="40" name="motivo_di_business" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Email di Contatto" max_length="60" name="u_email_contact" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Altro" max_length="255" name="u_other" type="string"/>
         <element label="Richiesto Per" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Tipo Richiesta" mandatory="true" max_length="40" name="u_request_type" type="string">
